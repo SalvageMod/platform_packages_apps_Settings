@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2011 The SalvageMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,43 +16,59 @@
 
 package com.android.settings;
 
-import android.net.sip.SipManager;
 import android.os.Bundle;
+import android.app.TabActivity;
+import android.widget.TabHost;
+import android.widget.TabWidget;
+import android.widget.FrameLayout;
+import android.widget.TabHost.TabSpec;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
-import android.telephony.TelephonyManager;
+import android.net.sip.SipManager;
 
-public class Settings extends PreferenceActivity {
+public class Settings extends TabActivity {
 
-    private static final String KEY_PARENT = "parent";
-    private static final String KEY_CALL_SETTINGS = "call_settings";
-    private static final String KEY_SYNC_SETTINGS = "sync_settings";
-    private static final String KEY_DOCK_SETTINGS = "dock_settings";
-    
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        addPreferencesFromResource(R.xml.settings);
-        
-        int activePhoneType = TelephonyManager.getDefault().getPhoneType();
 
-        PreferenceGroup parent = (PreferenceGroup) findPreference(KEY_PARENT);
-        Utils.updatePreferenceToSpecificActivityOrRemove(this, parent, KEY_SYNC_SETTINGS, 0);
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
 
-        Preference dockSettings = parent.findPreference(KEY_DOCK_SETTINGS);
-        if (getResources().getBoolean(R.bool.has_dock_settings) == false && dockSettings != null) {
-            parent.removePreference(dockSettings);
-        }
-    }
-    
-    @Override
-    protected void onResume() {
-        super.onResume();
-        findPreference(KEY_CALL_SETTINGS).setEnabled(
-                !AirplaneModeEnabler.isAirplaneModeOn(this)
-                || SipManager.isVoipSupported(this));
-    }
+    Resources res = getResources(); // Resource object to get Drawables
+    TabHost tabHost = getTabHost();  // The activity TabHost
+    TabHost.TabSpec spec;  // Resusable TabSpec for each tab
+    Intent intent;  // Reusable Intent for each tab
+
+    // Create an Intent to launch an Activity for the tab (to be reused)
+    intent = new Intent().setClass(this, SettingsMain.class);
+
+    // Initialize a TabSpec for each tab and add it to the TabHost
+    spec = tabHost.newTabSpec("settings").setIndicator("Settings",
+                      res.getDrawable(R.drawable.ic_tab_settings))
+                  .setContent(intent);
+    tabHost.addTab(spec);
+
+    intent = new Intent().setClass(this, Parts.class);
+    spec = tabHost.newTabSpec("parts").setIndicator("Parts",
+                      res.getDrawable(R.drawable.ic_tab_parts))
+                  .setContent(intent);
+    tabHost.addTab(spec);
+
+    intent = new Intent().setClass(this, Apps.class);
+    spec = tabHost.newTabSpec("apps").setIndicator("Apps",
+                      res.getDrawable(R.drawable.ic_tab_apps))
+                  .setContent(intent);
+    tabHost.addTab(spec);
+
+    intent = new Intent().setClass(this, About.class);
+    spec = tabHost.newTabSpec("about").setIndicator("About",
+                      res.getDrawable(R.drawable.ic_tab_about))
+                  .setContent(intent);
+    tabHost.addTab(spec);
+
+    tabHost.setCurrentTab(0);
+}
 
 }

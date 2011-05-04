@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:key="parent">
+
+
+    <!-- General app settings -->
+    <PreferenceScreen
+            android:title="@string/applications_settings"
+	    android:summary="@string/applications_settings_summary">
+            android:key="applications_settings">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.ApplicationSettings" />
+    </PreferenceScreen>
+
+<PreferenceCategory android:title="@string/app_quick_settings_title">
+    <!-- Browser Settings -->
+    <PreferenceScreen
+	android:key="browser_apps_settings"
+        android:title="@string/browser_settings_title_head"
+        android:summary="@string/browser_settings_summary_head">
+        <intent 
+	    android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.browser"
+            android:targetClass="com.android.browser.BrowserPreferencesPage" />
+    </PreferenceScreen>
+
+    <!-- Calender Settings -->
+    <PreferenceScreen
+	android:key="calender_apps_settings"
+        android:title="@string/calender_settings_title_head"
+        android:summary="@string/calender_settings_summary_head">
+        <intent 
+	    android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.calendar"
+            android:targetClass="com.android.calendar.CalendarPreferenceActivity" />
+    </PreferenceScreen>
+
+
+    <!-- Clock Settings -->
+    <PreferenceScreen
+	android:key="clock_apps_settings"
+        android:title="@string/clock_settings_title_head"
+        android:summary="@string/clock_settings_summary_head">
+        <intent 
+	    android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.deskclock"
+            android:targetClass="com.android.deskclock.SettingsActivity" />
+    </PreferenceScreen>
+
+    <!-- Gallery Settings -->
+    <PreferenceScreen
+	android:key="gallery_apps_settings"
+        android:title="@string/gallery_settings_title_head"
+        android:summary="@string/gallery_settings_summary_head">
+        <intent 
+	    android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.gallery"
+            android:targetClass="com.android.camera.GallerySettings" />
+    </PreferenceScreen>
+
+    <!-- Mms Settings -->
+    <PreferenceScreen
+	    android:key="mms_apps_settings"
+            android:title="@string/mms_settings_title_head" 
+	    android:summary="@string/mms_settings_summary_head">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.mms"
+                android:targetClass="com.android.mms.ui.MessagingPreferenceActivity" />
+    </PreferenceScreen>
+</PreferenceCategory>
+
+</PreferenceScreen>
