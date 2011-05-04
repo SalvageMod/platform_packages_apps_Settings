@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2011 The SalvageMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,21 @@
 
 package com.android.settings;
 
-import android.net.sip.SipManager;
+import android.app.TabActivity;
+import android.widget.TabHost;
+import android.widget.TabWidget;
+import android.app.Activity;
+import android.widget.TextView;
 import android.os.Bundle;
+import android.content.Intent;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.telephony.TelephonyManager;
+import android.net.sip.SipManager;
 
-public class Settings extends PreferenceActivity {
+
+public class SettingsMain extends PreferenceActivity {
 
     private static final String KEY_PARENT = "parent";
     private static final String KEY_CALL_SETTINGS = "call_settings";
