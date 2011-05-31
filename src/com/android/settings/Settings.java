@@ -56,7 +56,7 @@ public void onCreate(Bundle savedInstanceState) {
                   .setContent(intent);
     tabHost.addTab(spec);
 
-    intent = new Intent().setClass(this, Apps.class);
+    intent = new Intent().setClass(this, ApplicationSettings.class);
     spec = tabHost.newTabSpec("apps").setIndicator("Apps",
                       res.getDrawable(R.drawable.ic_tab_apps))
                   .setContent(intent);
