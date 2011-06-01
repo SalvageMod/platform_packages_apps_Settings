@@ -73,7 +73,7 @@
                 android:targetClass="com.android.settings.SecuritySettings" />
         </com.android.settings.IconPreferenceScreen>
 
-        <!-- Application Settings -->
+        <!-- Application Settings
 
         <com.android.settings.IconPreferenceScreen
             settings:icon="@drawable/ic_settings_applications"
@@ -83,7 +83,7 @@
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.android.settings.ApplicationSettings" />
-        </com.android.settings.IconPreferenceScreen>
+        </com.android.settings.IconPreferenceScreen> -->
 
         <!-- Data Sync. The settings activity will ensure this is resolved to an
              activity on the system image, otherwise it will remove this
