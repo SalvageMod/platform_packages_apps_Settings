@@ -28,12 +28,14 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.net.sip.SipManager;
+import android.view.Window;
 
 public class Settings extends TabActivity {
 
 
 public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.main);
 
     Resources res = getResources(); // Resource object to get Drawables
