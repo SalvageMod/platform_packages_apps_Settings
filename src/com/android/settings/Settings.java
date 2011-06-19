@@ -52,7 +52,8 @@ public void onCreate(Bundle savedInstanceState) {
                   .setContent(intent);
     tabHost.addTab(spec);
 
-    intent = new Intent().setClass(this, Parts.class);
+    intent = new Intent();
+    intent.setClassName("com.salvagemod.salvageparts", "com.salvagemod.salvageparts.activities.MainActivity");
     spec = tabHost.newTabSpec("parts").setIndicator("Parts",
                       res.getDrawable(R.drawable.ic_tab_parts))
                   .setContent(intent);
@@ -64,7 +65,8 @@ public void onCreate(Bundle savedInstanceState) {
                   .setContent(intent);
     tabHost.addTab(spec);
 
-    intent = new Intent().setClass(this, About.class);
+    intent = new Intent();
+    intent.setClassName("com.salvagemod.salvageparts", "com.salvagemod.salvageparts.activities.SystemActivity");
     spec = tabHost.newTabSpec("about").setIndicator("About",
                       res.getDrawable(R.drawable.ic_tab_about))
                   .setContent(intent);

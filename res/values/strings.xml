@@ -2659,18 +2659,6 @@ found in the list of installed applications.</string>
     "system_update_settings_list_item_title" in this project. [CHAR LIMIT=25] -->
     <string name="additional_system_update_settings_list_item_title">Additional system updates</string>
 
-    <!--  SalvageParts Screen Setting Titles and Summarys -->
-    <string name="interface_settings_title_head">User interface</string>
-    <string name="interface_settings_title_subhead">Interface settings</string>
-    <string name="interface_settings_summary_head">Notification widgets, overscrolling</string>
-    <string name="system_settings_title_head">Mod information</string>
-    <string name="system_settings_title_subhead">Mod information</string>
-    <string name="system_settings_summary_head">Changelog</string>
-    <string name="performance_settings_title_head">Performance settings</string>
-    <string name="performance_settings_summary_head">Adjust CPU settings</string>
-    <string name="term_emu_title">Terminal emulator</string>
-    <string name="term_emu_sum">A terminal emulator for Android</string>
-
     <!--  Application Setting Strings! -->
     <string name="mms_settings_title_head">Mms settings</string>
     <string name="mms_settings_summary_head">Storage, notifications, font sizes</string>
@@ -2687,12 +2675,7 @@ found in the list of installed applications.</string>
     <!-- About  -->
     <string name="about_settings_title_head">About phone</string>
     <string name="about_settings_summary_head">Status, battery use, device info</string>
-
     <string name="volume_control_silent_title">Silent state</string>
     <string name="volume_control_silent_summary">Add a state for complete silence to volume control</string>
-    
-    <!-- Lockscreen settings -->
-    <string name="lockscreen_title_head">Lockscreen settings</string>
-    <string name="lockscreen_settings_summary_head">Lockscreen music controls, styles, settings</string>
 
 </resources>
