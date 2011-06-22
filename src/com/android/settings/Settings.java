@@ -67,6 +67,12 @@ public void onCreate(Bundle savedInstanceState) {
 
     intent = new Intent();
     intent.setClassName("com.salvagemod.salvageparts", "com.salvagemod.salvageparts.activities.SystemActivity");
+    spec = tabHost.newTabSpec("rom").setIndicator("ROM",
+                      res.getDrawable(R.drawable.ic_tab_rom_info))
+                  .setContent(intent);
+    tabHost.addTab(spec);
+
+    intent = new Intent().setClass(this, DeviceInfoSettings.class);
     spec = tabHost.newTabSpec("about").setIndicator("About",
                       res.getDrawable(R.drawable.ic_tab_about))
                   .setContent(intent);

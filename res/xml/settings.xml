@@ -174,15 +174,4 @@
                 android:targetClass="com.android.settings.DateTimeSettings" />
         </com.android.settings.IconPreferenceScreen>
 
-        <!-- About Device -->
-
-        <com.android.settings.IconPreferenceScreen
-            settings:icon="@drawable/ic_settings_about"
-            android:title="@string/about_settings">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.settings"
-                android:targetClass="com.android.settings.DeviceInfoSettings" />
-        </com.android.settings.IconPreferenceScreen>
-
 </PreferenceScreen>
