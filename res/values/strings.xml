@@ -2671,6 +2671,7 @@ found in the list of installed applications.</string>
     <string name="clock_settings_title_head">Clock settings</string>
     <string name="clock_settings_summary_head">Alarm volume, snooze</string>
     <string name="app_quick_settings_title">Application quick settings</string>
+    <string name="app_settings_title">General application settings</string>
 
     <!-- About  -->
     <string name="about_settings_title_head">About phone</string>
