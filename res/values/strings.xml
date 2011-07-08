@@ -2678,8 +2678,5 @@ found in the list of installed applications.</string>
     <string name="about_settings_summary_head">Status, battery use, device info</string>
     <string name="volume_control_silent_title">Silent state</string>
     <string name="volume_control_silent_summary">Add a state for complete silence to volume control</string>
-    <string name="about_settings_title">General information</string>
-    <string name="hardware_settings_title">Hardware information</string>
-    <string name="software_settings_title">Software information</string>
 
 </resources>
