@@ -49,6 +49,11 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
+        <!-- Device cpu info -->
+        <Preference android:key="device_hwrev"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/hwrev_info"
+                android:summary="@string/device_info_default"/>
 </PreferenceCategory>
 
 <PreferenceCategory android:title="@string/about_settings_title">

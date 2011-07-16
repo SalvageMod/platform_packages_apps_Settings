@@ -75,6 +75,7 @@ public class DeviceInfoSettings extends PreferenceActivity {
 
         setStringSummary("device_cpu", getCPUInfo());
         setStringSummary("device_memory", getMemAvail().toString()+" MB / "+getMemTotal().toString()+" MB");
+        setStringSummary("device_hwrev", getHWREVInfo());
         setStringSummary("firmware_version", Build.VERSION.RELEASE);
         findPreference("firmware_version").setEnabled(true);
         setValueSummary("baseband_version", "gsm.version.baseband");
@@ -260,6 +261,37 @@ public class DeviceInfoSettings extends PreferenceActivity {
 
          // Grab a single line from cpuinfo
          String line = reader.readLine();
+
+         // Split on the colon, we need info to the right of colon
+         info = line.split(":");
+      }
+      catch(IOException io) {
+         io.printStackTrace();
+         info = new String[1];
+         info[1] = "error";
+      }
+      finally {
+         // Make sure the reader is closed no matter what
+         try { reader.close(); }
+         catch(Exception e) {}
+         reader = null;
+      }
+
+      return info[1];
+    }
+
+   private String getHWREVInfo() {
+      String[] info = null;
+      BufferedReader reader = null;
+
+      try {
+         // Grab a reader to /proc/cpuinfo
+         reader = new BufferedReader(new InputStreamReader(new FileInputStream("/proc/cpuinfo")), 1000);
+
+	 String line = reader.readLine();
+	 for(int i = 0; i < 9; ++i)
+	   line = reader.readLine();
+	 line = reader.readLine();
 
          // Split on the colon, we need info to the right of colon
          info = line.split(":");
