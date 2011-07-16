@@ -33,6 +33,24 @@
                 android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
 
+<PreferenceCategory android:title="@string/hardware_settings_title">
+        <!-- Device mem info -->
+        <Preference android:key="device_memory"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mem_info"
+                android:summary="@string/device_info_default"/>
+        <!-- Device cpu info -->
+        <Preference android:key="device_cpu"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/cpu_info"
+                android:summary="@string/device_info_default"/>
+        <!-- Device hardware model -->
+        <Preference android:key="device_model" 
+                style="?android:preferenceInformationStyle"
+                android:title="@string/model_number"
+                android:summary="@string/device_info_default"/>
+</PreferenceCategory>
+
 <PreferenceCategory android:title="@string/about_settings_title">
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
@@ -105,14 +123,6 @@
                 android:summary="@string/system_tutorial_list_item_summary">
             <intent android:action="android.intent.action.SYSTEM_TUTORIAL" />
         </PreferenceScreen>
-</PreferenceCategory>
-
-<PreferenceCategory android:title="@string/hardware_settings_title">    
-        <!-- Device hardware model -->
-        <Preference android:key="device_model" 
-                style="?android:preferenceInformationStyle"
-                android:title="@string/model_number"
-                android:summary="@string/device_info_default"/>
 </PreferenceCategory>
 
 <PreferenceCategory android:title="@string/software_settings_title">                
